@@ -15,7 +15,7 @@ const createNode = (value) => {
   };
 };
 
-class LinkedList {
+export class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -168,3 +168,7 @@ if (success) {
 } else {
   console.log(`Key - ${key} not found in the list`);
 }
+
+module.exports = {
+  LinkedList,
+};
