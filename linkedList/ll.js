@@ -15,7 +15,7 @@ const createNode = (value) => {
   };
 };
 
-export class LinkedList {
+class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -69,20 +69,20 @@ export class LinkedList {
   removeAtEnd() {
     this.length--;
     let current = this.head;
-    const tailNode = this.tail;
+    const val = this.tail.data;
     while (current.next !== this.tail) {
       current = current.next;
     }
     this.tail = current;
     this.tail.next = null;
-    return tailNode;
+    return val;
   }
 
   removeAtBegin() {
     this.length--;
-    const headNode = this.head;
+    const val = this.head.data;
     this.head = this.head.next;
-    return headNode;
+    return val;
   }
 
   removeAtIndex(index) {
@@ -94,8 +94,9 @@ export class LinkedList {
       i++;
     }
     const nextNode = current.next;
+    const val = nextNode.data;
     current.next = nextNode.next;
-    return nextNode;
+    return val;
   }
 
   search(key) {
